@@ -1,0 +1,302 @@
+@font-face{ font-family:'DNFBitBitv2';
+    font-style:normal;
+    font-weight:400;
+    src:url('https://cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')}
+@font-face{font-family : "Moneygraphy-Pixel"
+    src:url("fonts/Moneygraphy-Pixel.woff");
+    ;}
+@font-face { font-family: 'DOSSaemmul';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSSaemmul.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;}
+
+* {
+    cursor: url('img/cursor.PNG') 2 2, auto;
+}
+
+*:active{
+    cursor: url('img/pointer.PNG') 2 2, auto;
+}
+
+body { background: radial-gradient(ellipse, #1b2735 0%, #090a0f 100%);
+    filter: drop-shadow(0 0 50% white);
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+
+    } 
+
+    .random-image {
+        position: absolute;
+        opacity: 0; /* 초기 상태에서 이미지 숨기기 */
+        ; /* 서서히 나타나고 사라지게 하기 */
+        pointer-events: none; /* 이미지가 클릭을 방해하지 않도록 설정 */
+        width: 10vw;
+    }
+    
+    .random-image.show {
+        opacity: 1; /* 이미지를 보이게 */
+        overflow: hidden;
+    }
+
+.snow {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 3px 3px white;
+        z-index: 98;
+      }
+
+.bgmbutton {
+        z-index: 99;
+          position: absolute;
+    right: 2vw;
+    }
+
+.top { 
+    width: 100vw;
+z-index: 99;
+cursor: pointer;
+overflow: visible;}
+
+.introduce{
+    font-family: 'DOSSaemmul';
+    letter-spacing: 0.5rem;
+    font-size: 1.2rem;
+    animation: fadeOpacity 3s infinite; /* 3초 동안 애니메이션 반복 */
+}
+
+@keyframes fadeOpacity {
+    0% {
+        opacity: 0.2; /* 시작 시 오퍼시티 20% */
+    }
+    50% {
+        opacity: 0.9; /* 중간 시 오퍼시티 90% */
+    }
+    100% {
+        opacity: 0.2; /* 끝 시 오퍼시티 20% */
+    }
+}
+
+#intro1 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: -0.25rem;
+}
+#intro1 h1 {
+    filter: contrast(150%) ;
+    height: 40vh;
+    font-family: 'DNFBitBitv2';
+    font-style: normal;
+    font-weight:400;
+    -webkit-text-stroke: 3px black;
+    text-shadow: 
+    2px 2px 0px black, /* 우측 하단 */
+    -2px -2px 0px black, /* 좌측 상단 */
+    2px -2px 0px black, /* 우측 상단 */
+    -2px 2px 0px black, /* 좌측 하단 */
+    0px 0px 0px black,  /* 상단 */
+    0px 8px 0px black, /* 하단 */
+    2px 0px 0px black,  /* 오른쪽 */
+    -2px 0px 0px black; /* 왼쪽 */
+}
+
+#intro1 h1 span {
+    font-family: 'DNFBitBitv2';
+    font-size: 6rem;
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    /*  폰트가 부드러워지게 설정  */
+    -webkit-font-smoothing: antialiased;
+    /*  x축, y축, 블러 설정  */
+    
+    animation: bounce 0.35s ease 9 forwards alternate;
+}
+#intro1 h1 span:nth-child(2){animation-delay: 0.15s;}
+#intro1 h1 span:nth-child(3){animation-delay: 0.45s;}
+#intro1 h1 span:nth-child(4){animation-delay: 0.65s;}
+#intro1 h1 span:nth-child(5){animation-delay: 0.85s;}
+#intro1 h1 span:nth-child(6){animation-delay: 1.05s;}
+#intro1 h1 span:nth-child(7){animation-delay: 1.25s;}
+#intro1 h1 span:nth-child(8){animation-delay: 1.45s;}
+#intro1 h1 span:nth-child(9){animation-delay: 1.65s;}
+#intro1 h1 span:nth-child(10){animation-delay: 1.85s;}
+  
+@keyframes bounce {
+    100% {
+        top: -5px;
+        
+    }
+}
+
+#anitext {
+    font-size: 48px;
+    transition: all 0.5s ease-in-out; /* 텍스트 변화에 부드러운 애니메이션 추가 */
+    
+  }
+
+  .hidden { opacity: 0;
+  }
+
+.introButton {
+    font-family: "DOSSaemmul";
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 15px;
+    border: 3px solid;
+    border-color: white;
+}
+
+.introButton:hover {
+    background-color: black; /* 호버 시 배경을 흰색으로 변경 */
+    color: white; /* 호버 시 글자색을 검은색으로 변경 */
+    border-color: black; /* 호버 시 테두리 색을 검은색으로 변경 */
+}
+
+.data-trigger{display: flex;}
+
+.textbox2-1{width: 80vw;
+    height: 20vh;
+    color: black;
+    background-color: white;
+    border: 2px solid ;
+    position: fixed; /* 화면에 고정 */
+    bottom: 10vh; /* 아래쪽에 배치 */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬을 위해 */
+    display: flex; /* Flexbox 활성화 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; 
+    }
+
+.text1, .text2, .text3, .text4{
+    font-size: 2rem;
+    font-family: "DOSSaemmul";
+    color: black;
+    text-align: center;
+}
+
+.section {
+    background-image: url("img/bg2.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+}
+
+#intro1 {
+    background-image: url("img/bg1.jpg");
+    padding-top: 20vh;
+
+}
+
+.alertbox2-1 {
+    font-family: "DOSSaemmul";
+    margin: 0 auto;
+    width: 30vw;
+    height: 30vh;
+    font-size: 1.5rem;
+    color: black;
+    background-color: white;
+    border: 2px solid;
+    position: fixed; /* 화면에 고정 */
+    top: 40%; /* 수직 중앙 */
+    left: 50%; /* 수평 중앙 */
+    transform: translate(-50%, -50%); /* 완전한 중앙 정렬 */
+    display: flex; /* 내부 요소 정렬 */
+    flex-direction: column; /* 세로 정렬 */
+    justify-content: center; /* 내부 요소 수직 중앙 */
+    align-items: center; /* 내부 요소 수평 중앙 */
+    z-index: 100; /* 다른 요소 위에 표시 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    opacity: 0;
+}
+
+#nameInput{font-family: "DOSSaemmul";
+    font-size: 1rem;
+    margin: 0 auto;
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+}
+
+#nameInputbtn {
+    width: 2vw;
+    height: 5.5vh;
+    margin:0 auto;
+    cursor: pointer;
+}
+
+.snack-container{
+    display: flex;
+    flex-direction: column;  /* 위 아래 배치하려면 column*/
+    align-items: center;  /* 자식 요소들을 수평으로 중앙 정렬 */
+    justify-content: center;  /* 수직 정렬을 위해 */
+    gap: 5vh;  /* 요소들 사이의 간격 */
+    height: 80vh;  /* 화면 크기에 맞게 설정 */
+    font-family: "DOSSaemmul";
+    font-size: 2rem;
+}
+
+.snack-top {
+    display: flex;
+    justify-content: space-between; /* 3개 박스 간격 조정 */
+    width: 80%;  /* 부모의 너비를 80%로 설정 */
+    gap: 10px;  /* 박스 간의 간격 */
+}
+
+.snack-bottom {
+    display: flex;
+    justify-content: space-between;  /* 2개 박스 간격 조정 */
+    width: 60%;  /* 부모의 너비를 60%로 설정 */
+    gap: 10px;  /* 박스 간의 간격 */
+    flex-wrap: wrap;
+}
+
+
+.hover-image {
+    width: 25vw;
+    height: 15vh;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 2px solid;
+    cursor: pointer;
+}
+
+.hover-image p {
+    color: black;
+    position: absolute;
+    font-size: 1.2rem;
+}
+
+.hover-image img{
+    position: absolute;
+    display: none;
+    height: 100%;
+}
+.hover-image:hover img {
+    display: block; /* hover 시 img 보이게 */
+    cursor: pointer;
+    top: 60%; /* 세로 가운데 */
+    left: 90%; /* 가로로 10% 지점 */
+    transform: translate(-50%, -50%); /* 실제 중앙에 위치하도록 조정 */
+}
+.hover-image {
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+  }
+  
+  .hover-image:hover {
+    transform: scale(1.1); /* 이미지 크기 살짝 키우기 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+  }
